@@ -15,7 +15,7 @@ __global__ void ConvertUnsigedToDouble(double* arrayDouble, unsigned* arrayUnsig
 	}
 }
 
-// TODO: Currently this function uses host API, but it seems that it is not run on GPU. Not to change it to device API int the future.
+// Same lambda, use host API
 void MgGeneratePoissonSameLambda(double* resultArray, size_t resultSize, double lambda, unsigned long long seed)
 {
 	// generate Poisson random number of unsigned type
@@ -73,6 +73,7 @@ __global__ void GiveRandomNumbersToVariousLambda(double* resultArrayDev, double*
 	}
 }
 
+// Various lambda, use device API
 void MgGeneratePoissonVariousLambda(double* resultArray, double* lambda, size_t resultSize, unsigned long long seed)
 {
 	double* resultArray_dev;

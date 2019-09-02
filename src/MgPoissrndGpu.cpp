@@ -34,8 +34,8 @@ void mexFunction(int nlhs, mxArray* plhs[], int nrhs, const mxArray* prhs[])
 	if (nrhs < 1 || nrhs > 3)
 		mexErrMsgTxt("Invalid number of inputs.");
 	
-	if (nlhs != 1)
-		mexErrMsgTxt("Invalid number of outputs.");
+	if (nlhs > 1)
+		mexErrMsgTxt("Too many output arguments.");
 
 	unsigned long long seed;
 
